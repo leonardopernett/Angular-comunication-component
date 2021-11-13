@@ -7,19 +7,10 @@ import { DataService } from '@app/services/data.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent  {
-  nombre:string = "nombre"
- 
-
+  
   constructor(private data:DataService){}
 
-  cambiar(){
-    this.nombre="leonardo pernett"
-    this.data.nombreUsuario=this.nombre
+  changeMessage(){
+    this.data.nombre$.emit('leonardo pernett')
   }
-
-  cambiarPadre(event:string){
-    this.nombre = event
-    
-  }
-
 }

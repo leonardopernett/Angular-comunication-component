@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
-  nombreUsuario:string = "sin nombre....";
 
-  constructor() { }
+export class DataService {
+    nombre$ = new EventEmitter<string>();
+
+    constructor() { }
 }

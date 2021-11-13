@@ -1,12 +1,22 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
     <div class="d-flex justity-content-between">
-      <img src="https://getbootstrap.com/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" [ngStyle]="changeImg()">
-      <a class="navbar-brand" href="#">{{data.nombreUsuario}}</a>
+      <img src="https://getbootstrap.com/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="50">
+      <a class="navbar-brand" [routerLink]="['/']" *ngIf="data.nombre$ | async as nombre; else sindata">{{ nombre }}</a>
+      <ng-template #sindata>
+          <a class="navbar-brand" [routerLink]="['/']">{{ 'sin data'}}</a>
+      </ng-template>
     </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <
+  
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink] = "['/pricing']">Pricing</a>
+      </li>
+    </ul>
+  </div>
   </div>
 </nav>

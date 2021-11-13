@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { DataService } from '@app/services/data.service';
+import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-hijo',
@@ -7,15 +7,8 @@ import { DataService } from '@app/services/data.service';
   styleUrls: ['./hijo.component.scss']
 })
 export class HijoComponent  {
-  @Input('nombreHijo') nombreHijo:string = "hijo nombre" 
-  @Output() newNombre = new EventEmitter<string>()
-  
-  
-  constructor(public data:DataService){}
 
-  cambiar(){
-    this.nombreHijo="milena rios"
-    this.newNombre.emit(this.nombreHijo)
-    this.data.nombreUsuario = this.nombreHijo
-  }
+  constructor(){}
+
+
 }

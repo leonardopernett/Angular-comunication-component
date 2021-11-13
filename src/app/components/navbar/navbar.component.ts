@@ -1,18 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit, } from '@angular/core';
 import { DataService } from '@app/services/data.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit, OnDestroy{
 
+  mensaje:string = "Navbar!!"
+  mensajeSuscription:Subscription
+  constructor(public data:DataService){
   
-  constructor(public data:DataService){}
-
-  changeImg(){
-    return {  width:'50px', height:'40px'}
   }
+
+  ngOnInit(){
+   
+  }
+
+  ngOnDestroy(){
+    
+    }
 
 } 
